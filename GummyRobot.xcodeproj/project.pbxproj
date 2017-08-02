@@ -8,11 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		6666D4E81F3259E000BA70DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666D4E71F3259E000BA70DA /* AppDelegate.swift */; };
-		6666D4EA1F3259E000BA70DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666D4E91F3259E000BA70DA /* ViewController.swift */; };
+		6666D4EA1F3259E000BA70DA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666D4E91F3259E000BA70DA /* MainViewController.swift */; };
 		6666D4ED1F3259E000BA70DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6666D4EB1F3259E000BA70DA /* Main.storyboard */; };
 		6666D4EF1F3259E100BA70DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6666D4EE1F3259E100BA70DA /* Assets.xcassets */; };
 		6666D4F21F3259E100BA70DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6666D4F01F3259E100BA70DA /* LaunchScreen.storyboard */; };
 		6666D4FD1F3259E100BA70DA /* GummyRobotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666D4FC1F3259E100BA70DA /* GummyRobotTests.swift */; };
+		6666D5081F3259FF00BA70DA /* GummyRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666D5071F3259FF00BA70DA /* GummyRobot.swift */; };
+		6666D50B1F325A3700BA70DA /* MapCoord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666D50A1F325A3700BA70DA /* MapCoord.swift */; };
+		6666D50D1F325A4500BA70DA /* Conveyor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666D50C1F325A4500BA70DA /* Conveyor.swift */; };
+		6666D50F1F325A4D00BA70DA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666D50E1F325A4D00BA70DA /* Location.swift */; };
+		6666D5111F325A8600BA70DA /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666D5101F325A8600BA70DA /* Array.swift */; };
+		6666D5131F325AC100BA70DA /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666D5121F325AC100BA70DA /* Instruction.swift */; };
+		6666D5161F32766600BA70DA /* CommanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666D5151F32766600BA70DA /* CommanController.swift */; };
+		ED78AAEDEFCC74F68A9BDE9E /* Pods_GummyRobot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687D275387477591309955E2 /* Pods_GummyRobot.framework */; };
+		FBE2ACC89787B171E3EA0EB9 /* Pods_GummyRobotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD59A80D68DFB282032AC48 /* Pods_GummyRobotTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +37,7 @@
 /* Begin PBXFileReference section */
 		6666D4E41F3259E000BA70DA /* GummyRobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GummyRobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6666D4E71F3259E000BA70DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6666D4E91F3259E000BA70DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6666D4E91F3259E000BA70DA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6666D4EC1F3259E000BA70DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6666D4EE1F3259E100BA70DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6666D4F11F3259E100BA70DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +45,19 @@
 		6666D4F81F3259E100BA70DA /* GummyRobotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GummyRobotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6666D4FC1F3259E100BA70DA /* GummyRobotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GummyRobotTests.swift; sourceTree = "<group>"; };
 		6666D4FE1F3259E100BA70DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6666D5071F3259FF00BA70DA /* GummyRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GummyRobot.swift; path = Model/GummyRobot.swift; sourceTree = "<group>"; };
+		6666D50A1F325A3700BA70DA /* MapCoord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCoord.swift; sourceTree = "<group>"; };
+		6666D50C1F325A4500BA70DA /* Conveyor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conveyor.swift; sourceTree = "<group>"; };
+		6666D50E1F325A4D00BA70DA /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		6666D5101F325A8600BA70DA /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array.swift; path = Extensions/Array.swift; sourceTree = "<group>"; };
+		6666D5121F325AC100BA70DA /* Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Instruction.swift; path = Model/Instruction.swift; sourceTree = "<group>"; };
+		6666D5151F32766600BA70DA /* CommanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommanController.swift; sourceTree = "<group>"; };
+		687D275387477591309955E2 /* Pods_GummyRobot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GummyRobot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		716746598822095F59374C2A /* Pods-GummyRobot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GummyRobot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GummyRobot/Pods-GummyRobot.debug.xcconfig"; sourceTree = "<group>"; };
+		8C0AAE427849CEAC07021E4B /* Pods-GummyRobotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GummyRobotTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GummyRobotTests/Pods-GummyRobotTests.release.xcconfig"; sourceTree = "<group>"; };
+		CAD59A80D68DFB282032AC48 /* Pods_GummyRobotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GummyRobotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2FAA5192B2A2E34E99FD8C5 /* Pods-GummyRobot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GummyRobot.release.xcconfig"; path = "Pods/Target Support Files/Pods-GummyRobot/Pods-GummyRobot.release.xcconfig"; sourceTree = "<group>"; };
+		EB98EFEF6B56E04A3C3A8DB5 /* Pods-GummyRobotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GummyRobotTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GummyRobotTests/Pods-GummyRobotTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED78AAEDEFCC74F68A9BDE9E /* Pods_GummyRobot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +73,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE2ACC89787B171E3EA0EB9 /* Pods_GummyRobotTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		570C0F3444E15FC614594820 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				716746598822095F59374C2A /* Pods-GummyRobot.debug.xcconfig */,
+				E2FAA5192B2A2E34E99FD8C5 /* Pods-GummyRobot.release.xcconfig */,
+				EB98EFEF6B56E04A3C3A8DB5 /* Pods-GummyRobotTests.debug.xcconfig */,
+				8C0AAE427849CEAC07021E4B /* Pods-GummyRobotTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6666D4DB1F3259E000BA70DA = {
 			isa = PBXGroup;
 			children = (
 				6666D4E61F3259E000BA70DA /* GummyRobot */,
 				6666D4FB1F3259E100BA70DA /* GummyRobotTests */,
 				6666D4E51F3259E000BA70DA /* Products */,
+				570C0F3444E15FC614594820 /* Pods */,
+				A965E802EA22558F4EC3408B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,8 +115,11 @@
 			isa = PBXGroup;
 			children = (
 				6666D4E71F3259E000BA70DA /* AppDelegate.swift */,
-				6666D4E91F3259E000BA70DA /* ViewController.swift */,
+				6666D4E91F3259E000BA70DA /* MainViewController.swift */,
+				6666D5151F32766600BA70DA /* CommanController.swift */,
 				6666D4EB1F3259E000BA70DA /* Main.storyboard */,
+				6666D5091F325A1300BA70DA /* Model */,
+				6666D5141F3268F500BA70DA /* Extensions */,
 				6666D4EE1F3259E100BA70DA /* Assets.xcassets */,
 				6666D4F01F3259E100BA70DA /* LaunchScreen.storyboard */,
 				6666D4F31F3259E100BA70DA /* Info.plist */,
@@ -96,6 +136,35 @@
 			path = GummyRobotTests;
 			sourceTree = "<group>";
 		};
+		6666D5091F325A1300BA70DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6666D5071F3259FF00BA70DA /* GummyRobot.swift */,
+				6666D5121F325AC100BA70DA /* Instruction.swift */,
+				6666D50A1F325A3700BA70DA /* MapCoord.swift */,
+				6666D50C1F325A4500BA70DA /* Conveyor.swift */,
+				6666D50E1F325A4D00BA70DA /* Location.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6666D5141F3268F500BA70DA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6666D5101F325A8600BA70DA /* Array.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A965E802EA22558F4EC3408B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				687D275387477591309955E2 /* Pods_GummyRobot.framework */,
+				CAD59A80D68DFB282032AC48 /* Pods_GummyRobotTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6666D5011F3259E100BA70DA /* Build configuration list for PBXNativeTarget "GummyRobot" */;
 			buildPhases = (
+				03F45B862F2A16C76F68F553 /* [CP] Check Pods Manifest.lock */,
 				6666D4E01F3259E000BA70DA /* Sources */,
 				6666D4E11F3259E000BA70DA /* Frameworks */,
 				6666D4E21F3259E000BA70DA /* Resources */,
+				C72FBA29EB69C55BAAD1C200 /* [CP] Embed Pods Frameworks */,
+				9FB5069847E0710F9FA8CC5E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6666D5041F3259E100BA70DA /* Build configuration list for PBXNativeTarget "GummyRobotTests" */;
 			buildPhases = (
+				5CB28BDC4242EBED69D7559D /* [CP] Check Pods Manifest.lock */,
 				6666D4F41F3259E100BA70DA /* Sources */,
 				6666D4F51F3259E100BA70DA /* Frameworks */,
 				6666D4F61F3259E100BA70DA /* Resources */,
+				A607A7DC1B58E823DD544F74 /* [CP] Embed Pods Frameworks */,
+				4CDF207F04A7E30445821720 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,12 +271,112 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03F45B862F2A16C76F68F553 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4CDF207F04A7E30445821720 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GummyRobotTests/Pods-GummyRobotTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CB28BDC4242EBED69D7559D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9FB5069847E0710F9FA8CC5E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GummyRobot/Pods-GummyRobot-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A607A7DC1B58E823DD544F74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GummyRobotTests/Pods-GummyRobotTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C72FBA29EB69C55BAAD1C200 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GummyRobot/Pods-GummyRobot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6666D4E01F3259E000BA70DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6666D4EA1F3259E000BA70DA /* ViewController.swift in Sources */,
+				6666D4EA1F3259E000BA70DA /* MainViewController.swift in Sources */,
+				6666D5081F3259FF00BA70DA /* GummyRobot.swift in Sources */,
+				6666D5111F325A8600BA70DA /* Array.swift in Sources */,
+				6666D50B1F325A3700BA70DA /* MapCoord.swift in Sources */,
+				6666D50D1F325A4500BA70DA /* Conveyor.swift in Sources */,
+				6666D5161F32766600BA70DA /* CommanController.swift in Sources */,
+				6666D50F1F325A4D00BA70DA /* Location.swift in Sources */,
+				6666D5131F325AC100BA70DA /* Instruction.swift in Sources */,
 				6666D4E81F3259E000BA70DA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -329,7 +504,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -339,6 +514,7 @@
 		};
 		6666D5021F3259E100BA70DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 716746598822095F59374C2A /* Pods-GummyRobot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G55S74JQUS;
@@ -352,6 +528,7 @@
 		};
 		6666D5031F3259E100BA70DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2FAA5192B2A2E34E99FD8C5 /* Pods-GummyRobot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G55S74JQUS;
@@ -365,6 +542,7 @@
 		};
 		6666D5051F3259E100BA70DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB98EFEF6B56E04A3C3A8DB5 /* Pods-GummyRobotTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -380,6 +558,7 @@
 		};
 		6666D5061F3259E100BA70DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C0AAE427849CEAC07021E4B /* Pods-GummyRobotTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -412,6 +591,7 @@
 				6666D5031F3259E100BA70DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6666D5041F3259E100BA70DA /* Build configuration list for PBXNativeTarget "GummyRobotTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +600,7 @@
 				6666D5061F3259E100BA70DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,6 @@
+framework module Pods_GummyRobot {
+  umbrella header "Pods-GummyRobot-umbrella.h"
+
+  export *
+  module * { export * }
+}

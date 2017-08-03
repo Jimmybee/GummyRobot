@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fdw-XA-LeK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fdw-XA-LeK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0N8-xw-S3E">
-                                <rect key="frame" x="16" y="72" width="343" height="423"/>
+                                <rect key="frame" x="16" y="72" width="343" height="403.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6rW-1k-fJo">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="60.5"/>
@@ -144,7 +144,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HmI-0d-gZp">
-                                        <rect key="frame" x="0.0" y="251.5" width="343" height="121.5"/>
+                                        <rect key="frame" x="0.0" y="251.5" width="343" height="102"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions (N: North, E: East, S: South, W: West, P: Pick up, D: Drop): " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4S-dT-J76">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
@@ -152,17 +152,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="crr-ew-gCy">
-                                                <rect key="frame" x="0.0" y="51" width="343" height="40"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="aTl-AG-4lM"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
-                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkH-n2-LJU">
+                                                <rect key="frame" x="0.0" y="51" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valid Input" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvz-wm-7ed">
-                                                <rect key="frame" x="0.0" y="101" width="343" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="81.5" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -170,7 +167,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGG-hc-mdw">
-                                        <rect key="frame" x="0.0" y="393" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="373.5" width="343" height="30"/>
                                         <state key="normal" title="Submit Commands"/>
                                         <connections>
                                             <action selector="submitCommands" destination="BYZ-38-t0r" eventType="touchUpInside" id="74j-Jw-qqI"/>
@@ -196,7 +193,8 @@
                         <outlet property="conveyorX" destination="xoH-ft-qKG" id="Tyc-ID-RTd"/>
                         <outlet property="conveyorY" destination="KEB-Vp-d0f" id="coP-Ub-npY"/>
                         <outlet property="crateList" destination="Cry-2v-hEh" id="Q6N-n7-PEh"/>
-                        <outlet property="instructions" destination="crr-ew-gCy" id="d9W-rN-nzP"/>
+                        <outlet property="instructionStackView" destination="HmI-0d-gZp" id="6tz-Vp-L46"/>
+                        <outlet property="instructions" destination="bkH-n2-LJU" id="2a0-un-cyR"/>
                         <outlet property="modelValidLabel" destination="Lvz-wm-7ed" id="esk-BL-HAd"/>
                         <outlet property="robotX" destination="cQu-h7-pYq" id="blx-t8-CuB"/>
                         <outlet property="robotY" destination="wLP-wt-fCt" id="aVp-9u-Iad"/>
@@ -207,10 +205,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
-        <!--Command Controller-->
+        <!--Local Command View Controller-->
         <scene sceneID="pak-cf-s2d">
             <objects>
-                <viewController storyboardIdentifier="CommandController" id="SLM-rf-vga" customClass="CommandController" customModule="GummyRobot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocalCommandViewController" id="SLM-rf-vga" customClass="LocalCommandViewController" customModule="GummyRobot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xur-Ha-y8N"/>
                         <viewControllerLayoutGuide type="bottom" id="b6E-W6-kNK"/>

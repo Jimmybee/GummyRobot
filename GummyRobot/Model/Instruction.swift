@@ -8,9 +8,18 @@
 
 import Foundation
 
-enum Instruction: String {
-    case P, D, N, E, S, W
+enum Instruction: Int {
+    case  N, E, S, W, P, D
     
+    /// Updates a location with a performed action
+    /// N: Moves robot north
+    /// E: Moves robot east
+    /// S: Moves robot south
+    /// W: Moves robot west
+    /// P: Pickups up any bags at robot location in crate, and kills robot when no create exists
+    /// D: Drops robot bag load at conveyor if at same location, and kills robot if not at conveyor
+    /// - parameter location: A location containing a robot, conveyor and list of crates
+    /// - returns: A InstructionResult containing the success or failure
     func performAt(location: Location) -> InstructionResult {
         guard location.robot.alive == true else { return InstructionResult.fail(.brownBread)  }
         let robot = location.robot
@@ -45,6 +54,26 @@ enum Instruction: String {
             robot.coord = robot.coord.west()
             return InstructionResult.success
         }
+    }
+    
+    static var all: [Instruction] {
+        return [.N, .E, .S, .W, .P, .D]
+    }
+    
+    var title: String {
+        switch self {
+        case .P:
+            return "P"
+        case .D:
+            return "D"
+        case .N:
+            return "N"
+        case .E:
+            return "E"
+        case .S:
+            return "S"
+        case .W:
+            return "W"        }
     }
 
 }

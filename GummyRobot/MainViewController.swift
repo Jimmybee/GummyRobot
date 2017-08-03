@@ -10,6 +10,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+
+// TODO: Create controlled input for crate list
+// TODO: Add minus button to number pad
+
+
 class MainViewController: UIViewController {
     
     let disposeBag = DisposeBag()
@@ -20,35 +25,81 @@ class MainViewController: UIViewController {
     @IBOutlet weak var conveyorX: UITextField!
     @IBOutlet weak var conveyorY: UITextField!
     @IBOutlet weak var crateList: UITextView!
-    @IBOutlet weak var instructions: UITextView!
+    @IBOutlet weak var instructions: UILabel!
     
     @IBOutlet weak var modelValidLabel: UILabel!
     @IBOutlet weak var submitCommandsBttn: UIButton!
-
+    @IBOutlet weak var instructionStackView: UIStackView!
 
     var textFields: [UITextField] {
             return [robotX, robotY, conveyorX, conveyorY]
     }
     
     var textViews: [UITextView] {
-        return [crateList, instructions]
+        return [crateList]
     }
+    
     let viewModel = MainViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTextFields()
+        setupInstructionButtons()
+        setupRxBinding()
+    }
+}
+
+// MARK: - Setup functions
+extension MainViewController {
+    
+    /// Adds done button to number pad keyboards
+    fileprivate func setupTextFields() {
         textFields.addKeyboardToolBar(doneButton: doneBarBttn)
-        textViews.forEach({$0.delegate = self})
-        bindModel()
     }
     
-    func bindModel() {
+    /// Sets textView delegate
+    fileprivate func setupTextViews() {
+        textViews.forEach({$0.delegate = self})
+    }
+    
+    /// Adds buttons for instructions
+    fileprivate func setupInstructionButtons() {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 10
+        stack.distribution = .fillEqually
+        
+        instructionStackView.insertArrangedSubview(stack, at: 1)
+        var titles = Instruction.all.map{$0.title}
+        let deleteBttn = "Del"
+        titles.append(deleteBttn)
+        let buttons = titles.enumerated().map { (index, element) -> UIButton in
+            let button = UIButton()
+            button.setTitle(element, for: .normal)
+            button.backgroundColor = .lightGray
+            button.tag = index
+            button.addTarget(self, action: #selector(instructionBttnTapped), for: .touchUpInside)
+            return button
+        }
+        
+        buttons.forEach({ stack.addArrangedSubview($0)})
+    }
+    
+    /// Binds textfield and textview inputs to model, and model to UI elements
+    /// Binds instructions label to instructions model
+    /// Binds viewModelLabe ad submitCommandsBttn to whether a model is valid
+    fileprivate func setupRxBinding() {
         robotX.dualBindTo(viewModel.robotX, disposeBag: disposeBag)
         robotY.dualBindTo(viewModel.robotY, disposeBag: disposeBag)
         conveyorX.dualBindTo(viewModel.conveyorX, disposeBag: disposeBag)
         conveyorY.dualBindTo(viewModel.conveyorY, disposeBag: disposeBag)
         crateList.dualBindTo(viewModel.crateList, disposeBag: disposeBag)
-        instructions.dualBindTo(viewModel.instructions, disposeBag: disposeBag)
+        
+        viewModel.instructions.asObservable()
+            .map({ $0.map({$0.title})})
+            .map({ $0.joined(separator: ", ")})
+            .bindTo(instructions.rx.text)
+            .addDisposableTo(disposeBag)
         
         viewModel.modelValid.asObservable()
             .map({ $0 ? "Model Valid" : "Model Invalid"  })
@@ -59,18 +110,40 @@ class MainViewController: UIViewController {
             .bindTo(submitCommandsBttn.rx.isEnabled)
             .addDisposableTo(disposeBag)
     }
+}
 
+//MARK: - UI Interactions
+
+extension MainViewController {
+    
+    /// Called by Done button in toolbar added to keyboard
+    func keyboardDone() {
+        textFields.forEach({$0.resignFirstResponder()})
+    }
+    
+    /// Added to instruction buttons in setupInstructionButtons
+    /// Appends new instruction to model or deletes last instruction if button tag is outside range of Instructions.
+    func instructionBttnTapped(_ sender: UIButton) {
+        if let instruction = Instruction(rawValue: sender.tag) {
+            viewModel.instructions.value.append(instruction)
+        } else {
+            if !viewModel.instructions.value.isEmpty {
+                viewModel.instructions.value.removeLast()
+            }
+        }
+    }
+    
+    /// Creates a LocalCommandViewController with location in model containing robot, conveyor, crates after instructions have been performed
+    /// Pushed LocalCommandViewController on to navigation stack
     @IBAction func submitCommands() {
         let commandController = viewModel.performInstructions()
         navigationController?.pushViewController(commandController, animated: true)
     }
-    
-    func keyboardDone() {
-        textFields.forEach({$0.resignFirstResponder()})
-    }
 }
 
 extension MainViewController: UITextViewDelegate {
+    
+    /// Hides keyboard on return
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n") {
             textView.resignFirstResponder()
@@ -80,72 +153,7 @@ extension MainViewController: UITextViewDelegate {
     }
 }
 
-struct MainViewModel {
-    let robotX = Variable<String>("0")
-    let robotY = Variable<String>("0")
-    let conveyorX = Variable<String>("1")
-    let conveyorY = Variable<String>("1")
-    let crateList = Variable<String>("2,0,6,3,2,5")
-    let instructions = Variable<String>("EEPPNW")
-    
-    private var instructionList: Observable<[Instruction]> {
-        return instructions.asObservable()
-            .map{ ($0.characters) }
-            .map{ $0.flatMap({Instruction(rawValue: String($0))}) }
-    }
-    
-    
-    var modelValid: Observable<Bool> {
-        let robotXValid = robotX.asObservable().map({ Int($0) != nil })
-        let robotYValid = robotY.asObservable().map({ Int($0) != nil })
-        let conveyorXValid = conveyorX.asObservable().map({ Int($0) != nil })
-        let conveyorYValid = conveyorY.asObservable().map({ Int($0) != nil })
-        let crateListValid = crateList.asObservable().map({ ($0.components(separatedBy: ",").flatMap{Int($0)}.count % 3) == 0 })
-        let instructionsValid = Observable.combineLatest(instructions.asObservable(), instructionList) { $0.characters.count == $1.count }
-        
-        return Observable.combineLatest(robotXValid, robotYValid, conveyorXValid, conveyorYValid, crateListValid, instructionsValid) { $0 && $1 && $2 && $3 && $4 && $5}
-    }
-    
-    private func createLocation() -> Location {
-        let robot = GummyRobot(coord: MapCoord(x: Int(robotX.value)!, y: Int(robotY.value)!))
-        let conveyor = Conveyor(coord: MapCoord(x: Int(conveyorX.value)!, y: Int(conveyorY.value)!))
-        return Location(robot: robot, conveyor: conveyor, crateInput: crateList.value)
-    }
-    
-    func performInstructions() -> CommandController {
-        let location = createLocation()
-        instructions.value.characters.flatMap({Instruction(rawValue: String($0))}).forEach({_ = $0.performAt(location: location)})
-        let commandViewModel = CommandViewModel(location: location)
-        let commandController = CommandController.storyboardInit(commandViewModel)
-        return commandController
-    }
-}
 
 
 
-extension UITextField {
-    func dualBindTo(_ modelVariable: Variable<String>, disposeBag: DisposeBag) {
-        modelVariable.asObservable()
-            .bindTo(self.rx.text)
-            .addDisposableTo(disposeBag)
-        
-        self.rx.text
-            .orEmpty
-            .bindTo(modelVariable)
-            .addDisposableTo(disposeBag)
-    }
-}
-
-extension UITextView {
-    func dualBindTo(_ modelVariable: Variable<String>, disposeBag: DisposeBag) {
-        modelVariable.asObservable()
-            .bindTo(self.rx.text)
-            .addDisposableTo(disposeBag)
-        
-        self.rx.text
-            .orEmpty
-            .bindTo(modelVariable)
-            .addDisposableTo(disposeBag)
-    }
-}
 

@@ -8,18 +8,21 @@
 
 import UIKit
 
-class CommandController: UIViewController {
+/// TODO: Refactor instruction buttons to use tags and Instruction enum raw values
+/// TODO: Create a location observable and bind to statusLabel and robot image
+
+class LocalCommandViewController: UIViewController {
     
-    private static var storyboardId = "CommandController"
+    private static var storyboardId = "LocalCommandViewController"
     
-    static func storyboardInit(_ commandViewModel: CommandViewModel) -> CommandController {
+    static func storyboardInit(_ commandViewModel: LocalCommandViewModel) -> LocalCommandViewController {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let cc = mainStoryboard.instantiateViewController(withIdentifier: storyboardId)as! CommandController
+        let cc = mainStoryboard.instantiateViewController(withIdentifier: storyboardId)as! LocalCommandViewController
         cc.commandViewModel = commandViewModel
         return cc
     }
     
-    var commandViewModel: CommandViewModel!
+    var commandViewModel: LocalCommandViewModel!
     
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var robotImage: UIImageView!
@@ -73,13 +76,5 @@ class CommandController: UIViewController {
         default:
             break
         }
-    }
-}
-
-struct CommandViewModel {
-    var location: Location
-    
-    init(location: Location) {
-        self.location = location
     }
 }

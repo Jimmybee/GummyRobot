@@ -73,9 +73,9 @@ enum Instruction: Int {
         case .S:
             return "S"
         case .W:
-            return "W"        }
+            return "W"
+        }
     }
-
 }
 
 enum InstructionResult {

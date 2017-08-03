@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias CrateMap = [MapCoord: Store]
+typealias CrateMap = [MapCoord: Crate]
 
 struct Location {
     let robot: GummyRobot
@@ -30,11 +30,14 @@ struct Location {
         return robotPoint + robotAlive + robotLoad + conveyorLoad
     }
     
+    /// Builds a dictionary of map coordinates with crates.
+    /// - parameter input: A string describing crate locations and quantity of gummys
+    /// - returns: A dictionary of [MapCoord: Crate]
     static func createCrateMap(input: String) -> CrateMap {
         let split = input.components(separatedBy: ",").flatMap{Int($0)}.chunks(3)
         return split.reduce(CrateMap()) { (result, crateSplit) -> CrateMap in
             let point = MapCoord(x: crateSplit[0], y:  crateSplit[1])
-            let crate = Store(quantity: crateSplit[2])
+            let crate = Crate(quantity: crateSplit[2])
             var dict = result
             dict[point] = crate
             return dict

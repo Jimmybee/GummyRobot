@@ -17,7 +17,6 @@ struct MainViewModel {
     let crateList = Variable<String>("2,0,6,3,2,5")
     let instructions = Variable<[Instruction]>([.E, .E, .P, .P, .N, .W])
     
-    
     var modelValid: Observable<Bool> {
         let robotXValid = robotX.asObservable().map({ Int($0) != nil })
         let robotYValid = robotY.asObservable().map({ Int($0) != nil })
@@ -25,7 +24,6 @@ struct MainViewModel {
         let conveyorYValid = conveyorY.asObservable().map({ Int($0) != nil })
         let crateListValid = crateList.asObservable().map({ ($0.components(separatedBy: ",").flatMap{Int($0)}.count % 3) == 0 })
         let instructionsValid = Observable.combineLatest(instructions.asObservable(), instructions.asObservable()) { $0.count == $1.count }
-        
         return Observable.combineLatest(robotXValid, robotYValid, conveyorXValid, conveyorYValid, crateListValid, instructionsValid) { $0 && $1 && $2 && $3 && $4 && $5}
     }
     

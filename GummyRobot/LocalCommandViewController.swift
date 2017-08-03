@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// TODO: Refactor instruction buttons to use tags and Instruction enum raw values
+/// TODO: Refactor instruction buttons to use tags and Instruction enum raw values to avoid duplication
 /// TODO: Create a location observable and bind to statusLabel and robot image
 
 class LocalCommandViewController: UIViewController {
@@ -27,20 +27,16 @@ class LocalCommandViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var robotImage: UIImageView!
 
-
     override func viewDidLoad() {
         updateUI()
-        
         if commandViewModel.location.robot.alive == false {
             robotImage.transform = robotImage.transform.rotated(by: CGFloat.pi / 2)
         }
-
     }
     
     private func updateUI() {
         statusLabel.text = commandViewModel.location.status()
     }
-    
     
     @IBAction func moveNorth() {
         _ = Instruction.N.performAt(location: commandViewModel.location)

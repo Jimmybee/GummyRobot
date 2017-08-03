@@ -21,9 +21,8 @@ struct MapCoord: Hashable, Equatable {
             lhs.y == rhs.y
     }
     
-    func north() -> MapCoord { return MapCoord(x: x, y: y + 1)    }
-    func east() -> MapCoord { return MapCoord(x: x + 1, y: y)    }
-    func south() -> MapCoord { return MapCoord(x: x, y: y - 1)    }
-    func west() -> MapCoord { return MapCoord(x: x - 1, y: y)    }
-    
+    func north() -> MapCoord { return MapCoord(x: x, y: y + 1) }
+    func east() -> MapCoord { return MapCoord(x: x + 1, y: y) }
+    func south() -> MapCoord { return MapCoord(x: x, y: y - 1) }
+    func west() -> MapCoord { return MapCoord(x: x - 1, y: y) }
 }

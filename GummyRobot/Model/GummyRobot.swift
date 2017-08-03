@@ -8,8 +8,6 @@
 
 import Foundation
 
-import UIKit
-
 class GummyRobot {
     var coord: MapCoord
     var alive: Bool = true
@@ -22,15 +20,7 @@ class GummyRobot {
 }
 
 
-class Store {
-    var quantity: Int
-    
-    init(quantity: Int) {
-        self.quantity = quantity
-    }
-    
-    
-}
+
 
 
 

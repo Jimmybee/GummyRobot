@@ -6,6 +6,8 @@
 //  Copyright © 2017 James Birtwell. All rights reserved.
 //
 
+// TODO: Remove duplicate code from adding toolbar to UIElements 
+
 import UIKit
 
 extension Array {

@@ -63,7 +63,7 @@ extension MainViewController {
         textViews.addKeyboardToolBar(doneButton: doneBarBttn)
     }
     
-    /// Adds buttons for instructions
+    /// Adds buttons for instructions in horizontal stack
     fileprivate func setupInstructionButtons() {
         let stack = UIStackView()
         stack.axis = .horizontal
@@ -121,7 +121,6 @@ extension MainViewController {
     func keyboardDone() {
         textFields.forEach({$0.resignFirstResponder()})
         textViews.forEach({$0.resignFirstResponder()})
-
     }
     
     /// Added to instruction buttons in setupInstructionButtons

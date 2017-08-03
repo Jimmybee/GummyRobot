@@ -20,6 +20,7 @@
 		6666D5111F325A8600BA70DA /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666D5101F325A8600BA70DA /* Array.swift */; };
 		6666D5131F325AC100BA70DA /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666D5121F325AC100BA70DA /* Instruction.swift */; };
 		6666D5161F32766600BA70DA /* LocalCommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666D5151F32766600BA70DA /* LocalCommandViewController.swift */; };
+		6666D5181F33C40600BA70DA /* Crate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6666D5171F33C40600BA70DA /* Crate.swift */; };
 		66926BA61F334ACB00F9BD1B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66926BA51F334ACB00F9BD1B /* MainViewModel.swift */; };
 		66926BA81F334AEA00F9BD1B /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66926BA71F334AEA00F9BD1B /* UITextField.swift */; };
 		66926BAA1F334B0B00F9BD1B /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66926BA91F334B0B00F9BD1B /* UITextView.swift */; };
@@ -56,6 +57,7 @@
 		6666D5101F325A8600BA70DA /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array.swift; path = Extensions/Array.swift; sourceTree = "<group>"; };
 		6666D5121F325AC100BA70DA /* Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Instruction.swift; path = Model/Instruction.swift; sourceTree = "<group>"; };
 		6666D5151F32766600BA70DA /* LocalCommandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalCommandViewController.swift; sourceTree = "<group>"; };
+		6666D5171F33C40600BA70DA /* Crate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crate.swift; sourceTree = "<group>"; };
 		66926BA51F334ACB00F9BD1B /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewModel.swift; path = MainView/MainViewModel.swift; sourceTree = "<group>"; };
 		66926BA71F334AEA00F9BD1B /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		66926BA91F334B0B00F9BD1B /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				6666D5121F325AC100BA70DA /* Instruction.swift */,
 				6666D50E1F325A4D00BA70DA /* Location.swift */,
 				6666D50A1F325A3700BA70DA /* MapCoord.swift */,
+				6666D5171F33C40600BA70DA /* Crate.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6666D4EA1F3259E000BA70DA /* MainViewController.swift in Sources */,
+				6666D5181F33C40600BA70DA /* Crate.swift in Sources */,
 				66926BAA1F334B0B00F9BD1B /* UITextView.swift in Sources */,
 				6666D5081F3259FF00BA70DA /* GummyRobot.swift in Sources */,
 				6666D5111F325A8600BA70DA /* Array.swift in Sources */,

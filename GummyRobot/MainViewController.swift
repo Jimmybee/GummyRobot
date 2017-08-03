@@ -44,6 +44,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextFields()
+        setupTextViews()
         setupInstructionButtons()
         setupRxBinding()
     }
@@ -59,7 +60,7 @@ extension MainViewController {
     
     /// Sets textView delegate
     fileprivate func setupTextViews() {
-        textViews.forEach({$0.delegate = self})
+        textViews.addKeyboardToolBar(doneButton: doneBarBttn)
     }
     
     /// Adds buttons for instructions
@@ -119,6 +120,8 @@ extension MainViewController {
     /// Called by Done button in toolbar added to keyboard
     func keyboardDone() {
         textFields.forEach({$0.resignFirstResponder()})
+        textViews.forEach({$0.resignFirstResponder()})
+
     }
     
     /// Added to instruction buttons in setupInstructionButtons
@@ -138,18 +141,6 @@ extension MainViewController {
     @IBAction func submitCommands() {
         let commandController = viewModel.performInstructions()
         navigationController?.pushViewController(commandController, animated: true)
-    }
-}
-
-extension MainViewController: UITextViewDelegate {
-    
-    /// Hides keyboard on return
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if (text == "\n") {
-            textView.resignFirstResponder()
-            return false
-        }
-        return true
     }
 }
 

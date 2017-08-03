@@ -27,13 +27,20 @@ class LocalCommandViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var robotImage: UIImageView!
 
-    func updateUI() {
+
+    override func viewDidLoad() {
+        updateUI()
+        
+        if commandViewModel.location.robot.alive == false {
+            robotImage.transform = robotImage.transform.rotated(by: CGFloat.pi / 2)
+        }
+
+    }
+    
+    private func updateUI() {
         statusLabel.text = commandViewModel.location.status()
     }
     
-    override func viewDidLoad() {
-        updateUI()
-    }
     
     @IBAction func moveNorth() {
         _ = Instruction.N.performAt(location: commandViewModel.location)

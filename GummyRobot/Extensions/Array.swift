@@ -33,3 +33,20 @@ extension Array where Element:UITextField {
     }
     
 }
+
+extension Array where Element:UITextView {
+    func addKeyboardToolBar(doneButton: UIBarButtonItem) {
+        let doneToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(doneButton)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        forEach({$0.inputAccessoryView = doneToolbar})
+    }
+    
+}
